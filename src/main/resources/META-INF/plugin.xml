@@ -1,0 +1,15 @@
+<idea-plugin>
+  <id>com.chylex.intellij.keeppopupswhiledebugging</id>
+  <name>Keep Editor Popups While Debugging</name>
+  <vendor url="https://chylex.com">chylex</vendor>
+  
+  <description><![CDATA[
+    <p>When debugging, IntelliJ-based IDEs stop showing editor popups, such as Quick Documentation and Error Description, to avoid conflicts with debugger popups.
+       This behavior can be annoying since it affects popups from all elements, and not just those that actually conflict.</p>
+    <p>This plugin will keep showing all editor popups, even while debugging.
+       If you hover an element that has popups from both the editor and the debugger, both popups are shown and moving the cursor on top of one hides the other.</p>
+    <p><a href="https://youtrack.jetbrains.com/issue/IDEA-120435">IDEA-120435</a></p>
+  ]]></description>
+  
+  <depends>com.intellij.modules.platform</depends>
+</idea-plugin>
