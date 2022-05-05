@@ -12,4 +12,12 @@
   ]]></description>
   
   <depends>com.intellij.modules.platform</depends>
+  
+  <extensions defaultExtensionNs="com.intellij">
+    <postStartupActivity implementation="com.chylex.intellij.keeppopupswhiledebugging.PreventHidingPopups" />
+  </extensions>
+  
+  <applicationListeners>
+    <listener class="com.chylex.intellij.keeppopupswhiledebugging.PluginLoadListener" topic="com.intellij.ide.plugins.DynamicPluginListener" />
+  </applicationListeners>
 </idea-plugin>
