@@ -1,1 +1,1 @@
-rootProject.name = "KeepEditorPopupsWhileDebugging"
+rootProject.name = "KeepEditorTooltipsWhileDebugging"

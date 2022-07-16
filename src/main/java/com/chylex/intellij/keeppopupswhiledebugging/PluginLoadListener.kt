@@ -18,7 +18,7 @@ class PluginLoadListener : DynamicPluginListener {
 	
 	override fun beforePluginUnload(pluginDescriptor: IdeaPluginDescriptor, isUpdate: Boolean) {
 		if (pluginDescriptor.pluginId.idString == PLUGIN_ID) {
-			throw CannotUnloadPluginException("A restart is required to unload Keep Editor Popups While Debugging plugin.")
+			throw CannotUnloadPluginException("A restart is required to unload Keep Editor Tooltips While Debugging plugin.")
 		}
 	}
 }
