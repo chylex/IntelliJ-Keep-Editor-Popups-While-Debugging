@@ -13,9 +13,16 @@ class PreventHidingPopups : StartupActivity {
 	}
 	
 	companion object {
+		private var isInstalled = false
+		
 		fun installListener() {
+			if (isInstalled) {
+				return
+			}
+			
 			EditorMouseHoverPopupManager.getInstance() // Installs the default listener.
 			EditorMouseHoverPopupControl.getInstance()?.addListener(MouseTrackingDisabledListener)
+			isInstalled = true
 		}
 		
 		fun tryUninstallListener(): Boolean {
@@ -25,6 +32,7 @@ class PreventHidingPopups : StartupActivity {
 				val listenersField = instance.javaClass.getDeclaredField("listeners").also { it.isAccessible = true }
 				val listeners = listenersField.get(instance) as MutableCollection<*>
 				listeners.remove(MouseTrackingDisabledListener)
+				isInstalled = false
 				true
 			} catch (e: Exception) {
 				false
