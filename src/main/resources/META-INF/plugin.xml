@@ -16,6 +16,11 @@
   ]]></description>
   
   <change-notes><![CDATA[
+    <b>Version 1.1</b>
+    <ul>
+      <li>Disabling or uninstalling the plugin no longer requires a restart.</li>
+    </ul>
+    <b>Version 1.0.1</b>
     <ul>
       <li>Renamed the plugin to "Keep Editor Tooltips While Debugging" and updated description.</li>
     </ul>
