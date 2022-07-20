@@ -10,7 +10,7 @@
     If you hover an element that has tooltips from both the editor and the debugger, both tooltips are shown and moving the cursor on top of one hides the other.
     <br><br>
     Installing the plugin automatically re-enables all editor tooltips, even if installed in the middle of a debugging session.
-    Disabling or uninstalling the plugin requires an IDE restart. 
+    Disabling or uninstalling the plugin takes effect when the next debugging session starts.
     <br><br>
     <a href="https://youtrack.jetbrains.com/issue/IDEA-120435">IDEA-120435</a>
   ]]></description>

@@ -18,6 +18,19 @@ class PreventHidingPopups : StartupActivity {
 			EditorMouseHoverPopupControl.getInstance()?.addListener(MouseTrackingDisabledListener)
 		}
 		
+		fun tryUninstallListener(): Boolean {
+			val instance = EditorMouseHoverPopupControl.getInstance() ?: return true
+			
+			return try {
+				val listenersField = instance.javaClass.getDeclaredField("listeners").also { it.isAccessible = true }
+				val listeners = listenersField.get(instance) as MutableCollection<*>
+				listeners.remove(MouseTrackingDisabledListener)
+				true
+			} catch (e: Exception) {
+				false
+			}
+		}
+		
 		fun enablePopupsInAllProjects() {
 			val projectManager = ProjectManager.getInstanceIfCreated() ?: return
 			
